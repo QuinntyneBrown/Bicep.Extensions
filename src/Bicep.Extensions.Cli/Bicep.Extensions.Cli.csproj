@@ -17,7 +17,7 @@
     <Nullable>enable</Nullable>
     <UserSecretsId>fefb1176-7d2b-4f81-8697-42cd7b193ddf</UserSecretsId>
     <PackAsTool>true</PackAsTool>
-    <ToolCommandName>bicep</ToolCommandName>
+    <ToolCommandName>bx</ToolCommandName>
     <Version>1.0.0</Version>
     <PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>

@@ -1,3 +1,3 @@
-dotnet tool uninstall -g {{ namespace }}
+dotnet tool uninstall -g Bicep.Extensions.Cli
 dotnet pack
-dotnet tool install --global --add-source ./nupkg {{ namespace }}
+dotnet tool install --global --add-source ./nupkg Bicep.Extensions.Cli
