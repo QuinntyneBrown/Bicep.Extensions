@@ -10,7 +10,7 @@ namespace Bicep.Extensions.Application
         [Verb("default")]
         internal class Request : IRequest<Unit> {
             
-            [Value(0)]
+            [Option('n',"name")]
             public string Name { get; set; }
 
             [Option('d', Required = false)]
