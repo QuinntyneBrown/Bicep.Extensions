@@ -32,7 +32,7 @@ namespace Bicep.Extensions.Core
 
             var result = model.Tokens == null ? template : _templateProcessor.Process(template, model.Tokens);
 
-            var parts = Path.GetDirectoryName(model.Path).Split(Path.DirectorySeparatorChar);
+            var parts = _fileSystem.GetDirectoryName(model.Path).Split(Path.DirectorySeparatorChar);
 
             for(var i = 1; i <= parts.Length; i++)
             {

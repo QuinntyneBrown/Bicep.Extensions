@@ -59,5 +59,10 @@ namespace Bicep.Extensions.Core
         {
             return File.ReadAllLines(path);
         }
+
+        public string GetDirectoryName(string path)
+        {
+            return Path.GetDirectoryName(path);
+        }
     }
 }

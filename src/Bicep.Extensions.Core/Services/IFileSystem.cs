@@ -14,6 +14,7 @@ namespace Bicep.Extensions.Core
         void CreateDirectory(string directory);
         void Delete(string path);
         void DeleteDirectory(string directory);
+        string GetDirectoryName(string path);
 
     }
 }

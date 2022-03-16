@@ -21,7 +21,7 @@ namespace Bicep.Extensions.Core.Strategies
 
             content.Add(_azureResourceSignatureGenerationStrategy.Create(model));
 
-            content.Add($"name: {model.InstanceUniqueName}".Indent(1));
+            content.Add($"name: {model.UniqueName}".Indent(1));
 
             content.Add($"location: resourceGroup().location".Indent(1));
 

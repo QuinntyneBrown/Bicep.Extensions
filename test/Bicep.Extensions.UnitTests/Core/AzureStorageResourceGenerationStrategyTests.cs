@@ -10,12 +10,12 @@ namespace Bicep.Extensions.UnitTests.Core
         [Fact]
         public void ShouldCreate()
         {
-            var model = new AzureResourceFactory().CreateStorageAccount();
+            var model = new AzureResourceFactory().CreateStorageAccount("Test");
 
             var expected = new List<string>()
             {
                 "resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {",
-                $"  name: {model.InstanceUniqueName}",
+                "  name: Test${uniqueString(resourceGroup().id)}",
                 $"  location: resourceGroup().location",
                 $"  kind: '{model.Kind}'",
                 "  sku: {",
@@ -27,11 +27,6 @@ namespace Bicep.Extensions.UnitTests.Core
             var sut = new AzureStorageResourceGenerationStrategy(new AzureStorageSkuGenerationStrategy(), new AzureResourceSignatureGenerationStrategy());
 
             var actual = sut.Create(model);
-
-            for (var i = 0; i < expected.Length; i++)
-            {
-                Assert.Equal(expected[i], actual[i]);
-            }
 
             Assert.Equal(expected, actual);
         }
