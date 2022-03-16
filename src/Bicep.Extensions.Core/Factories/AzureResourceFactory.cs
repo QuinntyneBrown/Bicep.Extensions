@@ -34,6 +34,6 @@ namespace Bicep.Extensions.Core.Factories
                 "2021-08-01",
                 "StorageV2",
                 "westus3",
-                "Standard_LRS");
+                "Standard_LRS", JObject.Parse("{ accessTier: \"Hot\" }"));
     }
 }
