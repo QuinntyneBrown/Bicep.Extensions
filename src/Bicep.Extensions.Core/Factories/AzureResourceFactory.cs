@@ -1,5 +1,4 @@
 ﻿using Bicep.Extensions.Core.Models;
-using Newtonsoft.Json.Linq;
 
 namespace Bicep.Extensions.Core.Factories
 {
