@@ -3,6 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using Bicep.Extensions.Core;
+using Bicep.Extensions.Core.Factories;
+using Bicep.Extensions.Core.Strategies;
 
 namespace Bicep.Extensions.Cli
 {
@@ -28,6 +30,9 @@ namespace Bicep.Extensions.Cli
             services.AddSingleton<IFileProvider, FileProvider>();
             services.AddSingleton<IFileFactory,FileFactory>();
             services.AddSingleton<IFileGenerationStrategy,FileGenerationStrategy>();
+            services.AddSingleton<IBicepTemplateFactory, BicepTemplateFactory>();
+            services.AddSingleton<IAzureResourceFactory, AzureResourceFactory>();
+            services.AddSingleton<IBicepTemplateGenerationStrategy, BicepTemplateGenerationStrategy>();
             services.AddSingleton(CreateLoggerFactory().CreateLogger("cli"));
             
         }

@@ -35,6 +35,9 @@ namespace Bicep.Extensions.Application
                 _logger.LogInformation($"Handled: {nameof(Default)}");
 
                 var model = _fileFactory.CreateBicep("Default", request.Name, request.Directory);
+
+                _fileGenerationStrategy.Create(model);
+
                 return new();
             }
         }
