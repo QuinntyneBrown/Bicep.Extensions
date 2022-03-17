@@ -1,5 +1,4 @@
 using Microsoft.Extensions.Logging;
-using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
@@ -13,7 +12,7 @@ namespace Bicep.Extensions.Core
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public void Start(string arguments, string workingDirectory = null, bool waitForExit = true)
+        public void Start(string arguments, string? workingDirectory = null, bool waitForExit = true)
         {
             workingDirectory ??= Environment.CurrentDirectory;
 

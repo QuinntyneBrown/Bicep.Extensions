@@ -4,6 +4,6 @@ namespace Bicep.Extensions.Core
 {
     public interface IModuleFactory
     {
-        ModuleModel Create(string name);
+        ModuleModel Create(string name, string fileName);
     }
 }

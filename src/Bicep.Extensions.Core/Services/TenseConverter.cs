@@ -2,7 +2,6 @@ using SimpleNLG;
 
 namespace Bicep.Extensions.Core
 {
-
     public class TenseConverter : ITenseConverter
     {
         public string Convert(string value, bool pastTense = true)

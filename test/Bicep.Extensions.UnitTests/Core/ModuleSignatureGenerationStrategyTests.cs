@@ -9,11 +9,11 @@ namespace Bicep.Extensions.UnitTests.Core
         [Fact]
         public void ShouldCreate()
         {
-            var expected = "module";
+            var expected = "module foo 'foo.bicep' = {";
 
             var sut = new ModuleSignatureGenerationStrategy();
 
-            var model = new ModuleFactory().Create("Foo");
+            var model = new ModuleFactory().Create("foo","foo.bicep");
 
             var actual = sut.Create(model);
             

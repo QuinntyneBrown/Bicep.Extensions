@@ -4,6 +4,6 @@ namespace Bicep.Extensions.Core.Strategies
 {
     public class ModuleSignatureGenerationStrategy: IModuleSignatureGenerationStrategy
     {
-        public string Create(ModuleModel model) => $"module";
+        public string Create(ModuleModel model) => $"module {model.Name} '{model.FileName}' = " + "{";
     }
 }
