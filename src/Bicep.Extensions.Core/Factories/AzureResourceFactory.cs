@@ -34,7 +34,7 @@ namespace Bicep.Extensions.Core.Factories
             => new AzureResourceModel()
             {
                 SymbolicName = "storageAccount",
-                Kind = "StorageV2",
+                Kind = AzureStorageAccountResource.Kind.StorageV2,
                 Name = name,
                 Type = new ()
                 {

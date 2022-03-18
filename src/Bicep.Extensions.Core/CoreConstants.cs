@@ -11,6 +11,14 @@
 
         public static class AzureStorageAccountResource
         {
+            public static class Kind
+            {
+                public static readonly string StorageV2 = nameof(StorageV2);
+                public static readonly string Storage = nameof(Storage);
+                public static readonly string BlogStorage = nameof(BlogStorage);
+                public static readonly string BlockBlobStorage = nameof(BlockBlobStorage);
+                public static readonly string FileStorage = nameof(FileStorage);
+            }
             public static class Skus
             {
                 public static readonly string Standard = "Standard_LRS";
@@ -18,7 +26,7 @@
 
             public static class SkuNames
             {
-                public static readonly string Standard = "Stanard";
+                public static readonly string Standard = "Stanard_LRS";
             }
         }
     }

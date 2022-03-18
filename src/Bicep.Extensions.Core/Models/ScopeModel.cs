@@ -1,6 +1,6 @@
 ﻿namespace Bicep.Extensions.Core.Models
 {
-    public class AzureResourceDependencyModel
+    public class ScopeModel
     {
     }
 }
