@@ -4,20 +4,18 @@ namespace Bicep.Extensions.Cli
 {
     public class LoggerProvider : ILoggerProvider
     {
-        private readonly LoggerOptions options;
+        private readonly LoggerOptions _options;
 
         public LoggerProvider(LoggerOptions options)
         {
-            this.options = options;
+            _options = options;
         }
 
-        public void Dispose()
-        {
-        }
+        public void Dispose() { }
 
         public ILogger CreateLogger(string categoryName)
         {
-            return new ConsoleLogger(this.options);
+            return new ConsoleLogger(_options);
         }
     }
 }

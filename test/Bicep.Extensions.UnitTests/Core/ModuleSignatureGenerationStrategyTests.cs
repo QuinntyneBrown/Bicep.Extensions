@@ -1,4 +1,4 @@
-﻿using Bicep.Extensions.Core;
+﻿using Bicep.Extensions.Core.Models;
 using Bicep.Extensions.Core.Strategies;
 using Xunit;
 
@@ -13,7 +13,7 @@ namespace Bicep.Extensions.UnitTests.Core
 
             var sut = new ModuleSignatureGenerationStrategy();
 
-            var model = new ModuleFactory().Create("foo","foo.bicep");
+            var model = new ModuleModel("foo","foo.bicep");
 
             var actual = sut.Create(model);
             

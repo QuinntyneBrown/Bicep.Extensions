@@ -1,4 +1,5 @@
 ﻿using Bicep.Extensions.Core.Models;
+using static Bicep.Extensions.Core.CoreConstants;
 
 namespace Bicep.Extensions.Core.Factories
 {
@@ -42,7 +43,7 @@ namespace Bicep.Extensions.Core.Factories
                 },
                 Sku = new ()
                 {
-                    Name = "Standard_LRS"
+                    Name = AzureStorageAccountResource.SkuNames.Standard
                 },
                 Properties = AzureResourcePropertiesModel.Parse("storageAccount", "{ accessTier: \"Hot\" }")
             };
