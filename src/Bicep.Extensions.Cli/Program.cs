@@ -1,8 +1,6 @@
 using CommandLine;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Linq;
 
 namespace Bicep.Extensions.Cli
 {
@@ -31,7 +29,7 @@ namespace Bicep.Extensions.Cli
             return services.BuildServiceProvider();
         }
 
-        public static void ProcessArgs(IMediator mediator, string[] args)
+        public static void ProcessArgs(IMediator? mediator, string[] args)
         {
             if (args.Length == 0 || args[0].StartsWith("-"))
             {
@@ -45,8 +43,7 @@ namespace Bicep.Extensions.Cli
 
             _createParser().ParseArguments(args, verbs)
                 .WithParsed(
-                  (dynamic request) => mediator.Send(request));
+                  (dynamic request) => mediator?.Send(request));
         }
     }
-
 }
