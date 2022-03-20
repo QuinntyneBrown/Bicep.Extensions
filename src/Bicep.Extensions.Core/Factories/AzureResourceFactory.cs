@@ -48,6 +48,19 @@ namespace Bicep.Extensions.Core.Factories
                 Properties = AzureResourcePropertiesModel.Parse("storageAccount", "{ accessTier: \"Hot\" }")
             };
 
+        public AzureResourceModel CreateResourceGroup(string name, string location = "eastus")
+            => new()
+            {
+                SymbolicName = "resourceGroup",
+                Name = name,
+                Location = location,
+                Type = new()
+                {
+                    Name = "Microsoft.Resources/resourceGroups",
+                    Version = "2021-04-01"
+                },
+            };
+
         public AzureResourceModel CreateAppServicePlan()
         {
             throw new NotImplementedException();

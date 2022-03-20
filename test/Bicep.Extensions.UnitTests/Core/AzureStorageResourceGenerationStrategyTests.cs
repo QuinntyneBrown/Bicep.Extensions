@@ -30,5 +30,25 @@ namespace Bicep.Extensions.UnitTests.Core
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void ShouldCreateResourceGroup()
+        {
+            var model = new AzureResourceFactory().CreateResourceGroup("'Test'","eastus");
+
+            var expected = new List<string>()
+            {
+                "resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {",
+                "  name: 'Test'",
+                $"  location: eastus",
+                "}"
+            }.ToArray();
+
+            var sut = new AzureResourceGroupResourceGenerationStrategy(new AzureResourceSignatureGenerationStrategy());
+
+            var actual = sut.Create(model);
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

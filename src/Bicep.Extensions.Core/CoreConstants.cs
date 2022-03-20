@@ -7,6 +7,8 @@
             public static readonly string StorageAccount = "storageAccount";
             public static readonly string WebApp = "webApp";
             public static readonly string AppServicePlan = "appServicePlan";
+            public static readonly string SqlDatabase = "sqlDatabase";
+            public static readonly string ResourceGroup = "resourceGroup";
         }
 
         public static class AzureStorageAccountResource
@@ -27,6 +29,21 @@
             public static class SkuNames
             {
                 public static readonly string Standard = "Stanard_LRS";
+            }
+        }
+
+        public static class AzureSqlDatabaseResource
+        {
+            public static class Kind
+            {
+            }
+
+            public static class Skus
+            {
+            }
+
+            public static class SkuNames
+            {
             }
         }
     }
