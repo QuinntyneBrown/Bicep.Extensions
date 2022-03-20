@@ -4,6 +4,6 @@ namespace Bicep.Extensions.Core.Strategies.AzureResource
 {
     public interface IAzureResourceGenerationStrategyFactory
     {
-        void CreateFor(AzureResourceModel model);
+        string[] CreateFor(AzureResourceModel model);
     }
 }

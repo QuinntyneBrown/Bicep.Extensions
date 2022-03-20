@@ -14,7 +14,7 @@ namespace Bicep.Extensions.Core.Strategies.AzureResource
 
             };
         }
-        public void CreateFor(AzureResourceModel model)
+        public string[] CreateFor(AzureResourceModel model)
         {
             if (model == null)
             {
@@ -28,7 +28,7 @@ namespace Bicep.Extensions.Core.Strategies.AzureResource
                 throw new InvalidOperationException("Cannot find a strategy for generation for the symbolic name " + model.SymbolicName);
             }
 
-            strategy.Create(model);
+            return strategy.Create(model);
         }
     }
 }
